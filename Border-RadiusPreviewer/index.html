@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Border-Radius Previewer</title>
+  </head>
+  <body>
+    <header>
+      <h1>Border-Radius Previewer</h1>
+      <p>Adjust the sliders to preview and generate border-radius values</p>
+    </header>
+
+    <main>
+      <div id="frame"></div>
+      <form class="controls">
+        <div>
+          <label for="border-top-left">Border Top Left</label>
+          <input
+            type="range"
+            id="border-top-left-radius"
+            value="0"
+            onInput="this.nextElementSibling.value = this.value"
+          />
+          <output>0px</output>
+        </div>
+
+        <div>
+          <label for="border-top-right">Border Top Right</label>
+          <input
+            type="range"
+            id="border-top-right-radius"
+            value="0"
+            onInput="this.nextElementSibling.value = this.value"
+          />
+          <output>0</output>
+        </div>
+
+        <div>
+          <label for="border-bottom-left">Border Bottom Left</label>
+          <input
+            type="range"
+            id="border-bottom-left-radius"
+            value="0"
+            onInput="this.nextElementSibling.value = this.value"
+          />
+          <output>0</output>
+        </div>
+
+        <div>
+          <label for="border-bottom-rigth">Border Bottom Rigth</label>
+          <input
+            type="range"
+            id="border-bottom-right-radius"
+            value="0"
+            onInput="this.nextElementSibling.value = this.value"
+          />
+          <output>0</output>
+        </div>
+      </form>
+
+      <div class="result">
+        <label for="border-result">border-radius:</label>
+        <input
+          type="text"
+          id="border-result"
+          disabled
+          value="0px 0px 0px 0px"
+        />
+      </div>
+
+      <div class="btn-copy">
+        <button onclick="copyResult()" id="btn-copy">Copy to Clipboard</button>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
